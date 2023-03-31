@@ -24,11 +24,11 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'unique|string|max:128',
-            'quantity' => 'string|max:128',
-            'type' => 'string|max:128',
-            'price' => 'float|max:7',
-            'color_id' => 'integer|max:7',
+            'title' => 'nullable|string|max:128',
+            'quantity' => 'required|numeric|max:4|min:0',
+            'type' => 'nullable|string|max:128',
+            'price' => 'nullable|string|max:7',
+            'color_id' => 'nullable|string|max:7',
         ];
     }
 }

@@ -44,7 +44,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
             @if($edit == 1)
-            <form class="mt-2" action="{{ route('clients.destroy', $client) }}" method="POST">
+            <form class="mt-2" action="{{ route('products.destroy', $product) }}" method="POST">
                 @csrf
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-outline-danger">Delete</button>

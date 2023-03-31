@@ -17,9 +17,24 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->string('quantity');
-            $table->string('type');
-            $table->float('price');
-            $table->integer('color_id');
+            $table->string('type')->nullable();
+            $table->string('price')->nullable();
+            $table->string('color_id')->nullable();
+            $table->foreignId('client_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+            $table->foreignId('creater_id')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+            $table->foreignId('updater_id')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
             $table->timestamps();
         });
     }
