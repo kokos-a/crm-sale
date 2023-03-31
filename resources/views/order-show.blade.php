@@ -21,10 +21,11 @@
                             <dd class="col-sm-8">{{ $order->title }}</dd>
                             <dt class="col-sm-4">Status</dt>
                             <dd class="col-sm-8">{{ $order->T }}</dd>
-                            </dd>
+
                         </dl>
                         <p class="card-text">{{ $order->about }}</p>
-                        <p>Created: {{ date_format(date_create($order->created_at), 'd.m.Y H:i:s') }} {{ $order->creater->name }}</p>
+                        <p>
+                            Created: {{ date_format(date_create($order->created_at), 'd.m.Y H:i:s') }} {{ $order->creater->name }}</p>
                     </div>
                     <div class="card-footer">
                         <a type="button" class="btn btn-outline-primary"
