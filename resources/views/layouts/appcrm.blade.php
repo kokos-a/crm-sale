@@ -34,7 +34,7 @@
         .main {
             margin-left: 160px; /* Same as the width of the sidenav */
             font-size: 28px; /* Increased text to enable scrolling */
-            padding: 0px 10px;
+            padding: 10px 10px;
         }
 
         @media screen and (max-height: 450px) {
@@ -51,7 +51,7 @@
             font-size: 18px;
         }
 
-        }
+
     </style>
 </head>
 <body>
@@ -63,13 +63,14 @@
             <li><a href= /clients ><span>Сlients</span></a></li>
             <li><a href= /orders ><span>Orders</span></a></li>
             <li><a href= /products ><span>Product</span></a></li>
+            <li><a href= /colors ><span>Colors</span></a></li>
             <li><a href= /statistic><span>Statistic</span></a></li>
             <li><a href= /users ><span>Managers</span></a></li>
             <li><a href= /admin ><span>For Admin</span></a></li>
         </ul>
     </aside>
 </div>
-<div class="main">
+<div class="content-wrapper">
     @yield('leftside')
 </div>
 </body>

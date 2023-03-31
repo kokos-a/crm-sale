@@ -3,11 +3,9 @@
 
 @section('content')
 
-        <div class="container">
+        <main class="py-4">
             <div class="main">
-
-                <div class="col-12">
-                    <a type="button" class="btn btn-outline-primary my-8" href="{{ route('clients.create') }}">Add Client</a>
+                   <a type="button" class="btn btn-outline-primary my-8" href="{{ route('clients.create') }}">Add Client</a>
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -43,11 +41,9 @@
                         {{ $clients->links() }}
                     @endif
                     @if (count($clients) < 1)
-                        You have not a clients!
+                        You have not any clients!
                     @endif
                 </div>
-
-            </div>
-        </div>
+        </main>
 
 @endsection

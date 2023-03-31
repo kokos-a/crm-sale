@@ -17,7 +17,7 @@
             @endif
             <form class="mt-2" method="POST" action="@if($edit == 1){{ route('products.update', $product) }}@else{{ route('products.store') }}@endif">@csrf
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="title" name="title" maxlength="128" value="{{ $product->title }}">
+                    <input type="text" class="form-control" id="title" name="title" maxlength="128" placeholder="Enter name of product" value="{{ $product->title }}">
                     <label for="title" class="form-label">Title</label>
                 </div>
                 <div class="mb-3">
@@ -33,7 +33,7 @@
                     <label for="color_id" class="form-label">color_id</label>
                 </div>
                 <div class="mb-3">
-                    <select id="quantity" name="quantity" class="form-select" required>
+                    <select  title ="quantity" id="quantity" name="quantity" class="form-select" required>
                         <option value="0" @if ($product->quantity == 0) selected @endif>Pieces</option>
                         <option value="1" @if ($product->quantity == 1) selected @endif>Kilogram</option>
                         <option value="2" @if ($product->quantity == 2) selected @endif>m3</option>
@@ -44,7 +44,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
             @if($edit == 1)
-            <form class="mt-2" action="{{ route('clients.destroy', $client) }}" method="POST">
+            <form class="mt-2" action="{{ route('products.destroy', $product) }}" method="POST">
                 @csrf
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-outline-danger">Delete</button>

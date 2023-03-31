@@ -50,12 +50,12 @@
                     @if($edit == 1)
                         <input type="hidden" name="_method" value="PATCH">
                     @endif
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
                 @if($edit == 1)
-                    <form class="mt-2" action="{{ route('bids.destroy', $order) }}" method="POST">@csrf
+                    <form class="mt-2" action="{{ route('orders.destroy', $order) }}" method="POST">@csrf
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-outline-danger">Удалить</button>
+                        <button type="submit" class="btn btn-outline-danger">DELETE</button>
                     </form>
                 @endif
             </div>

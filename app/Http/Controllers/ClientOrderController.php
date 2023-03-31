@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOrderRequest;
 use App\Models\Client;
 use App\Models\Order;
+use App\Models\Product;
 
 class ClientOrderController extends Controller
 {
@@ -13,7 +14,7 @@ class ClientOrderController extends Controller
         return view('order-index', ['client' => $client, 'orders' => Order::where(['client_id' => $client->id])->orderByDesc('id')->paginate(20)]);
     }
 
-    public function create(Client $client)
+    public function create(Client $client, Product $product)
     {
         return view('order-edit', ['edit' => 0, 'order' => new Order(['client_id' => $client->id])]);
     }

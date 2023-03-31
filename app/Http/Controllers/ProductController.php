@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $validated = $request->validated();
-        $product = Client::create($validated);
+        $product = Product::create($validated);
         return redirect()->route('products.show', $product);
     }
 

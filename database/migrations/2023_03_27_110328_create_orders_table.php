@@ -13,27 +13,10 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('some', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 128)->nullable();
-            $table->text('about')->nullable();
-            $table->unsignedTinyInteger('type')->default(1);
-            $table->foreignId('client_id')
-            ->nullable()
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->nullOnDelete();
-            $table->foreignId('creater_id')
-            ->nullable()
-                ->constrained('users')
-                ->cascadeOnUpdate()
-                ->nullOnDelete();
-            $table->foreignId('updater_id')
-            ->nullable()
-                ->constrained('users')
-                ->cascadeOnUpdate()
-                ->nullOnDelete();
-            $table->timestamps();
+            $table->string('some_none');
+
         });
     }
 
@@ -44,6 +27,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('some');
     }
 }

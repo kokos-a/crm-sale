@@ -16,10 +16,25 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->string('quantity');
-            $table->string('type');
-            $table->float('price');
-            $table->integer('color_id');
+            $table->string('qty');
+            $table->string('type')->nullable();
+            $table->integer('price');
+            $table->integer('stock');
+            $table->foreignId('client_id')
+                ->nullable()
+                ->constrained('clients')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+            $table->foreignId('creater_id')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+            $table->foreignId('updater_id')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
             $table->timestamps();
         });
     }
